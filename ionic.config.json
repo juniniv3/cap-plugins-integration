@@ -1,0 +1,7 @@
+{
+  "name": "cap-plugins-integration",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
