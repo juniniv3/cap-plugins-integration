@@ -7,6 +7,7 @@ import {
 } from "@ionic/react";
 import { ActionSheet, ActionSheetButtonStyle } from "@capacitor/action-sheet";
 import { AppLauncher } from "@capacitor/app-launcher";
+import { CapacitorBarcodeScanner } from '@capacitor/barcode-scanner';
 import ExploreContainer from "../components/ExploreContainer";
 import { Device } from "@capacitor/device";
 
@@ -56,6 +57,11 @@ const Home: React.FC = () => {
     }
   };
 
+  const scanBarcode = async () => {
+    const result = await CapacitorBarcodeScanner.scanBarcode({hint: 1});
+    console.log(result);
+  };
+
   return (
     <IonPage>
       <IonHeader>
@@ -73,6 +79,8 @@ const Home: React.FC = () => {
         <h2 onClick={showActionSheet}>Show Action Sheet</h2>
         <br />
         <h2 onClick={openYoutubeApp}>Open youtube app</h2>
+        <br />
+        <h2 onClick={scanBarcode}>Scan Barcode</h2>
       </IonContent>
     </IonPage>
   );

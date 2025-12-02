@@ -49,5 +49,7 @@
 	<array>
 		<string>youtube</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>This app uses the camera for multiple purposes.</string>
 </dict>
 </plist>
