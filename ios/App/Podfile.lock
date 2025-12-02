@@ -5,7 +5,11 @@ PODS:
     - Capacitor
   - CapacitorApp (7.1.0):
     - Capacitor
+  - CapacitorAppLauncher (7.0.2):
+    - Capacitor
   - CapacitorCordova (7.4.4)
+  - CapacitorDevice (7.0.2):
+    - Capacitor
   - CapacitorHaptics (7.0.2):
     - Capacitor
   - CapacitorKeyboard (7.0.3):
@@ -17,7 +21,9 @@ DEPENDENCIES:
   - "Capacitor (from `../../node_modules/@capacitor/ios`)"
   - "CapacitorActionSheet (from `../../node_modules/@capacitor/action-sheet`)"
   - "CapacitorApp (from `../../node_modules/@capacitor/app`)"
+  - "CapacitorAppLauncher (from `../../node_modules/@capacitor/app-launcher`)"
   - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorDevice (from `../../node_modules/@capacitor/device`)"
   - "CapacitorHaptics (from `../../node_modules/@capacitor/haptics`)"
   - "CapacitorKeyboard (from `../../node_modules/@capacitor/keyboard`)"
   - "CapacitorStatusBar (from `../../node_modules/@capacitor/status-bar`)"
@@ -29,8 +35,12 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor/action-sheet"
   CapacitorApp:
     :path: "../../node_modules/@capacitor/app"
+  CapacitorAppLauncher:
+    :path: "../../node_modules/@capacitor/app-launcher"
   CapacitorCordova:
     :path: "../../node_modules/@capacitor/ios"
+  CapacitorDevice:
+    :path: "../../node_modules/@capacitor/device"
   CapacitorHaptics:
     :path: "../../node_modules/@capacitor/haptics"
   CapacitorKeyboard:
@@ -42,11 +52,13 @@ SPEC CHECKSUMS:
   Capacitor: 358dd1c3fdd71d969547b17e159fd8a7736cb45f
   CapacitorActionSheet: 12eb20a892c04c345573415d5d248a64ccd26ba4
   CapacitorApp: 26587c2ce485d88ddb39adb21cac64f8e481afe3
+  CapacitorAppLauncher: b70f649f609bab6412eccdd413bd7f0dd42df4a9
   CapacitorCordova: bf648a636f3c153f652d312ae145fb508b6ffced
+  CapacitorDevice: 81ae78d5d1942707caad79276badd458bf6ec603
   CapacitorHaptics: b3fb2869e72c4466e18ce9ccbeb60a3d8723b3d4
   CapacitorKeyboard: 62f36104f26d53d8b3a2a43f2a69fe714f1777d5
   CapacitorStatusBar: 0659ddc7b1713764a05831463d215b177a15d054
 
-PODFILE CHECKSUM: 24bba2bee094417501517c00c9a36b723b7be50b
+PODFILE CHECKSUM: acf3315d221c7a7115a00f17bdaf01c0ec8efb90
 
 COCOAPODS: 1.16.2

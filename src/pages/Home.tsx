@@ -1,29 +1,59 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { ActionSheet, ActionSheetButtonStyle } from '@capacitor/action-sheet';
-import ExploreContainer from '../components/ExploreContainer';
-import './Home.css';
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+} from "@ionic/react";
+import { ActionSheet, ActionSheetButtonStyle } from "@capacitor/action-sheet";
+import { AppLauncher } from "@capacitor/app-launcher";
+import ExploreContainer from "../components/ExploreContainer";
+import { Device } from "@capacitor/device";
+
+import "./Home.css";
 
 const Home: React.FC = () => {
-
   const showActionSheet = async () => {
     const result = await ActionSheet.showActions({
-      title: 'Photo Options',
-      message: 'Select an option to perform',
+      title: "Photo Options",
+      message: "Select an option to perform",
       options: [
         {
-          title: 'example1',
+          title: "example1",
         },
         {
-          title: 'example2',
+          title: "example2",
         },
         {
-          title: 'example3',
+          title: "example3",
           style: ActionSheetButtonStyle.Destructive,
         },
       ],
     });
 
-    console.log('Action Sheet result:', result);
+    console.log("Action Sheet result:", result);
+  };
+
+  const openYoutubeApp = async () => {
+    const info = await Device.getInfo();
+    const canOpenIOS = await AppLauncher.canOpenUrl({
+      url: "youtube://",
+    });
+
+    if (info.platform === "ios" && canOpenIOS.value) {
+      await AppLauncher.openUrl({ url: "youtube://" });
+      return;
+    }
+
+    const canOpenAndroid = await AppLauncher.canOpenUrl({
+      url: "com.google.android.youtube",
+    });
+
+    if (info.platform === "android" && canOpenAndroid.value) {
+      await AppLauncher.openUrl({
+        url: "com.google.android.youtube",
+      });
+    }
   };
 
   return (
@@ -41,6 +71,8 @@ const Home: React.FC = () => {
         </IonHeader>
         <ExploreContainer />
         <h2 onClick={showActionSheet}>Show Action Sheet</h2>
+        <br />
+        <h2 onClick={openYoutubeApp}>Open youtube app</h2>
       </IonContent>
     </IonPage>
   );
