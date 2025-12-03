@@ -10,6 +10,8 @@ PODS:
   - CapacitorBarcodeScanner (2.2.0):
     - Capacitor
     - OSBarcodeLib (= 2.0.1)
+  - CapacitorBrowser (7.0.2):
+    - Capacitor
   - CapacitorCordova (7.4.4)
   - CapacitorDevice (7.0.2):
     - Capacitor
@@ -27,6 +29,7 @@ DEPENDENCIES:
   - "CapacitorApp (from `../../node_modules/@capacitor/app`)"
   - "CapacitorAppLauncher (from `../../node_modules/@capacitor/app-launcher`)"
   - "CapacitorBarcodeScanner (from `../../node_modules/@capacitor/barcode-scanner`)"
+  - "CapacitorBrowser (from `../../node_modules/@capacitor/browser`)"
   - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
   - "CapacitorDevice (from `../../node_modules/@capacitor/device`)"
   - "CapacitorHaptics (from `../../node_modules/@capacitor/haptics`)"
@@ -48,6 +51,8 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor/app-launcher"
   CapacitorBarcodeScanner:
     :path: "../../node_modules/@capacitor/barcode-scanner"
+  CapacitorBrowser:
+    :path: "../../node_modules/@capacitor/browser"
   CapacitorCordova:
     :path: "../../node_modules/@capacitor/ios"
   CapacitorDevice:
@@ -65,6 +70,7 @@ SPEC CHECKSUMS:
   CapacitorApp: 26587c2ce485d88ddb39adb21cac64f8e481afe3
   CapacitorAppLauncher: b70f649f609bab6412eccdd413bd7f0dd42df4a9
   CapacitorBarcodeScanner: 4b6d4ecfff4133af982d09acd423610c14ac0c3f
+  CapacitorBrowser: 22541e48442de44dc629c214388290d6eecc6ae9
   CapacitorCordova: bf648a636f3c153f652d312ae145fb508b6ffced
   CapacitorDevice: 81ae78d5d1942707caad79276badd458bf6ec603
   CapacitorHaptics: b3fb2869e72c4466e18ce9ccbeb60a3d8723b3d4
@@ -72,6 +78,6 @@ SPEC CHECKSUMS:
   CapacitorStatusBar: 0659ddc7b1713764a05831463d215b177a15d054
   OSBarcodeLib: 57987d2eb1f916f701f4554e20e349b3cb83f023
 
-PODFILE CHECKSUM: 485a3c7c42e7692d6bcf05401faff1c7a5a3d5ec
+PODFILE CHECKSUM: bc97c6475f1b37a3680b6c7b80a16f6bb3c522dc
 
 COCOAPODS: 1.16.2
