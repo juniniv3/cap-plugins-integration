@@ -11,6 +11,7 @@ import { CapacitorBarcodeScanner } from '@capacitor/barcode-scanner';
 import { Browser } from '@capacitor/browser';
 import ExploreContainer from "../components/ExploreContainer";
 import { Device } from "@capacitor/device";
+import { Camera, CameraResultType } from '@capacitor/camera';
 
 import "./Home.css";
 
@@ -63,9 +64,20 @@ const Home: React.FC = () => {
     console.log(result);
   };
 
-const openCapacitorSite = async () => {
-  await Browser.open({ url: 'http://capacitorjs.com/' });
-};
+  const openCapacitorSite = async () => {
+    await Browser.open({ url: 'http://capacitorjs.com/' });
+  };
+
+  const takePicture = async () => {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: true,
+      resultType: CameraResultType.Uri
+    });
+
+    var imageUrl = image.webPath;
+    console.log(imageUrl);
+  };
 
 
   return (
@@ -81,7 +93,6 @@ const openCapacitorSite = async () => {
             <IonTitle size="large">Blank</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer />
         <h2 onClick={showActionSheet}>Show Action Sheet</h2>
         <br />
         <h2 onClick={openYoutubeApp}>Open youtube app</h2>
@@ -89,6 +100,8 @@ const openCapacitorSite = async () => {
         <h2 onClick={scanBarcode}>Scan Barcode</h2>
         <br />
         <h2 onClick={openCapacitorSite}>Open Capacitor Site</h2>
+        <br />
+        <h2 onClick={takePicture}>Open camera</h2>
       </IonContent>
     </IonPage>
   );
