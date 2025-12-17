@@ -14,6 +14,8 @@ import { Device } from "@capacitor/device";
 import { Camera, CameraResultType } from '@capacitor/camera';
 import { Clipboard } from '@capacitor/clipboard';
 import { Dialog } from '@capacitor/dialog';
+import { Share } from '@capacitor/share';
+
 
 import "./Home.css";
 
@@ -62,7 +64,7 @@ const Home: React.FC = () => {
   };
 
   const scanBarcode = async () => {
-    const result = await CapacitorBarcodeScanner.scanBarcode({hint: 1});
+    const result = await CapacitorBarcodeScanner.scanBarcode({ hint: 1 });
     console.log(result);
   };
 
@@ -87,6 +89,14 @@ const Home: React.FC = () => {
     await Dialog.alert({
       title: 'tipo ' + type,
       message: 'valor ' + value
+    });
+  };
+
+  const shareContent = async () => {
+    await Share.share({
+      title: 'Share',
+      text: 'Share',
+      url: 'http://capacitorjs.com/',
     });
   };
 
@@ -116,6 +126,8 @@ const Home: React.FC = () => {
         <br />
         <h2 onClick={checkClipboard}>show clipboard value</h2>
         <br />
+        <h2 onClick={shareContent}>Share content</h2>
+
       </IonContent>
     </IonPage>
   );
