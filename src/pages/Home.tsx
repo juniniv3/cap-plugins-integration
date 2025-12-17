@@ -12,6 +12,8 @@ import { Browser } from '@capacitor/browser';
 import ExploreContainer from "../components/ExploreContainer";
 import { Device } from "@capacitor/device";
 import { Camera, CameraResultType } from '@capacitor/camera';
+import { Clipboard } from '@capacitor/clipboard';
+import { Dialog } from '@capacitor/dialog';
 
 import "./Home.css";
 
@@ -79,6 +81,15 @@ const Home: React.FC = () => {
     console.log(imageUrl);
   };
 
+  const checkClipboard = async () => {
+    const { type, value } = await Clipboard.read();
+    console.log(`Got ${type} from clipboard: ${value}`);
+    await Dialog.alert({
+      title: 'tipo ' + type,
+      message: 'valor ' + value
+    });
+  };
+
 
   return (
     <IonPage>
@@ -102,6 +113,9 @@ const Home: React.FC = () => {
         <h2 onClick={openCapacitorSite}>Open Capacitor Site</h2>
         <br />
         <h2 onClick={takePicture}>Open camera</h2>
+        <br />
+        <h2 onClick={checkClipboard}>show clipboard value</h2>
+        <br />
       </IonContent>
     </IonPage>
   );
