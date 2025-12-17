@@ -15,7 +15,7 @@ import { Camera, CameraResultType } from '@capacitor/camera';
 import { Clipboard } from '@capacitor/clipboard';
 import { Dialog } from '@capacitor/dialog';
 import { Share } from '@capacitor/share';
-
+import { Geolocation } from '@capacitor/geolocation';
 
 import "./Home.css";
 
@@ -100,6 +100,14 @@ const Home: React.FC = () => {
     });
   };
 
+  const getGeolocation = async () => {
+    const result = await Geolocation.getCurrentPosition();
+    console.log(result);
+    await Dialog.alert({
+      title: 'Geolocation',
+      message: JSON.stringify(result),
+    });
+  };
 
   return (
     <IonPage>
@@ -127,6 +135,8 @@ const Home: React.FC = () => {
         <h2 onClick={checkClipboard}>show clipboard value</h2>
         <br />
         <h2 onClick={shareContent}>Share content</h2>
+        <br />
+        <h2 onClick={getGeolocation}>Get Geolocation</h2>
 
       </IonContent>
     </IonPage>
